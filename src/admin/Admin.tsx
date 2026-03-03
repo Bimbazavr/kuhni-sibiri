@@ -111,21 +111,21 @@ export function Admin() {
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-950 flex">
+    <div className="min-h-screen bg-[#080F1E] flex">
       {/* Sidebar */}
       <aside
-        className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-zinc-900 border-r border-zinc-800 transition-transform ${
+        className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-[#0B1629] border-r border-blue-900 transition-transform ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        <div className="p-6 border-b border-zinc-800">
+        <div className="p-6 border-b border-blue-900">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
-              <span className="text-black font-bold">А</span>
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+              <span className="text-white font-bold">А</span>
             </div>
             <div>
               <h1 className="text-white font-semibold">Админ-панель</h1>
-              <p className="text-zinc-500 text-xs">Кухни Сибири</p>
+              <p className="text-blue-400 text-xs">Кухни Сибири</p>
             </div>
           </div>
         </div>
@@ -139,8 +139,8 @@ export function Admin() {
                 onClick={() => setActiveTab(item.id)}
                 className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                   activeTab === item.id
-                    ? 'bg-amber-500/20 text-amber-400'
-                    : 'text-zinc-400 hover:bg-zinc-800 hover:text-white'
+                    ? 'bg-orange-500/20 text-orange-400'
+                    : 'text-blue-300 hover:bg-[#0F2035] hover:text-white'
                 }`}
               >
                 <Icon className="w-5 h-5" />
@@ -151,10 +151,10 @@ export function Admin() {
           })}
         </nav>
 
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-zinc-800">
+        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-blue-900">
           <button
             onClick={logout}
-            className="w-full flex items-center gap-3 px-4 py-3 text-zinc-400 hover:text-white transition-colors"
+            className="w-full flex items-center gap-3 px-4 py-3 text-blue-300 hover:text-white transition-colors"
           >
             <LogOut className="w-5 h-5" />
             <span>Выйти</span>
@@ -165,10 +165,10 @@ export function Admin() {
       {/* Main content */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Header */}
-        <header className="bg-zinc-900 border-b border-zinc-800 p-4 flex items-center justify-between">
+        <header className="bg-[#0B1629] border-b border-blue-900 p-4 flex items-center justify-between">
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="lg:hidden text-zinc-400 hover:text-white"
+            className="lg:hidden text-blue-300 hover:text-white"
           >
             <Menu className="w-6 h-6" />
           </button>
@@ -177,14 +177,14 @@ export function Admin() {
             <a
               href="/"
               target="_blank"
-              className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
+              className="flex items-center gap-2 text-blue-300 hover:text-white transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
               <span className="hidden sm:inline">Открыть сайт</span>
             </a>
             <Button
               onClick={handleSave}
-              className="bg-amber-500 hover:bg-amber-600 text-black"
+              className="bg-orange-500 hover:bg-orange-600 text-black"
             >
               <Save className="w-4 h-4 mr-2" />
               Сохранить
@@ -202,38 +202,38 @@ export function Admin() {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Название сайта</Label>
+                    <Label className="text-blue-200">Название сайта</Label>
                     <Input
                       value={config.siteName}
                       onChange={(e) => updateField('siteName', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Описание сайта</Label>
+                    <Label className="text-blue-200">Описание сайта</Label>
                     <Input
                       value={config.siteDescription}
                       onChange={(e) => updateField('siteDescription', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Город</Label>
+                    <Label className="text-blue-200">Город</Label>
                     <Input
                       value={config.city}
                       onChange={(e) => updateField('city', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Регион</Label>
+                    <Label className="text-blue-200">Регион</Label>
                     <Input
                       value={config.region}
                       onChange={(e) => updateField('region', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                     />
                   </div>
                 </div>
@@ -247,27 +247,27 @@ export function Admin() {
                 
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Заголовок УТП</Label>
+                    <Label className="text-blue-200">Заголовок УТП</Label>
                     <Input
                       value={config.utp.title}
                       onChange={(e) => updateField('utp.title', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Подзаголовок</Label>
+                    <Label className="text-blue-200">Подзаголовок</Label>
                     <Input
                       value={config.utp.subtitle}
                       onChange={(e) => updateField('utp.subtitle', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                     />
                   </div>
 
                   <div className="space-y-4">
-                    <Label className="text-zinc-300">Преимущества</Label>
+                    <Label className="text-blue-200">Преимущества</Label>
                     {config.utp.benefits.map((benefit, index) => (
-                      <div key={index} className="grid grid-cols-3 gap-4 p-4 bg-zinc-800/50 rounded-lg">
+                      <div key={index} className="grid grid-cols-3 gap-4 p-4 bg-[#0F2035]/50 rounded-lg">
                         <Input
                           value={benefit.title}
                           onChange={(e) => {
@@ -276,7 +276,7 @@ export function Admin() {
                             updateField('utp.benefits', newBenefits);
                           }}
                           placeholder="Заголовок"
-                          className="bg-zinc-800 border-zinc-700 text-white"
+                          className="bg-[#0F2035] border-blue-900 text-white"
                         />
                         <Input
                           value={benefit.description}
@@ -286,7 +286,7 @@ export function Admin() {
                             updateField('utp.benefits', newBenefits);
                           }}
                           placeholder="Описание"
-                          className="bg-zinc-800 border-zinc-700 text-white col-span-2"
+                          className="bg-[#0F2035] border-blue-900 text-white col-span-2"
                         />
                       </div>
                     ))}
@@ -302,40 +302,40 @@ export function Admin() {
                 
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Title (заголовок страницы)</Label>
+                    <Label className="text-blue-200">Title (заголовок страницы)</Label>
                     <Input
                       value={config.seo.title}
                       onChange={(e) => updateField('seo.title', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Meta Description</Label>
+                    <Label className="text-blue-200">Meta Description</Label>
                     <Textarea
                       value={config.seo.description}
                       onChange={(e) => updateField('seo.description', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                       rows={3}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Keywords (через запятую)</Label>
+                    <Label className="text-blue-200">Keywords (через запятую)</Label>
                     <Textarea
                       value={config.seo.keywords.join(', ')}
                       onChange={(e) => updateField('seo.keywords', e.target.value.split(', '))}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                       rows={4}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">OG Image (путь к изображению)</Label>
+                    <Label className="text-blue-200">OG Image (путь к изображению)</Label>
                     <Input
                       value={config.seo.ogImage}
                       onChange={(e) => updateField('seo.ogImage', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                     />
                   </div>
                 </div>
@@ -349,49 +349,49 @@ export function Admin() {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Телефон (для ссылки)</Label>
+                    <Label className="text-blue-200">Телефон (для ссылки)</Label>
                     <Input
                       value={config.phone}
                       onChange={(e) => updateField('phone', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                       placeholder="89041234567"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Телефон (отображение)</Label>
+                    <Label className="text-blue-200">Телефон (отображение)</Label>
                     <Input
                       value={config.phoneFormatted}
                       onChange={(e) => updateField('phoneFormatted', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                       placeholder="8 (904) 123-45-67"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Email</Label>
+                    <Label className="text-blue-200">Email</Label>
                     <Input
                       value={config.email}
                       onChange={(e) => updateField('email', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Адрес</Label>
+                    <Label className="text-blue-200">Адрес</Label>
                     <Input
                       value={config.address}
                       onChange={(e) => updateField('address', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                     />
                   </div>
 
                   <div className="space-y-2 md:col-span-2">
-                    <Label className="text-zinc-300">Режим работы</Label>
+                    <Label className="text-blue-200">Режим работы</Label>
                     <Input
                       value={config.workingHours}
                       onChange={(e) => updateField('workingHours', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                     />
                   </div>
                 </div>
@@ -402,41 +402,41 @@ export function Admin() {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Instagram</Label>
+                    <Label className="text-blue-200">Instagram</Label>
                     <Input
                       value={config.social.instagram || ''}
                       onChange={(e) => updateField('social.instagram', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                       placeholder="https://instagram.com/..."
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">VK</Label>
+                    <Label className="text-blue-200">VK</Label>
                     <Input
                       value={config.social.vk || ''}
                       onChange={(e) => updateField('social.vk', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                       placeholder="https://vk.com/..."
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">Telegram</Label>
+                    <Label className="text-blue-200">Telegram</Label>
                     <Input
                       value={config.social.telegram || ''}
                       onChange={(e) => updateField('social.telegram', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                       placeholder="https://t.me/..."
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label className="text-zinc-300">WhatsApp</Label>
+                    <Label className="text-blue-200">WhatsApp</Label>
                     <Input
                       value={config.social.whatsapp || ''}
                       onChange={(e) => updateField('social.whatsapp', e.target.value)}
-                      className="bg-zinc-800 border-zinc-700 text-white"
+                      className="bg-[#0F2035] border-blue-900 text-white"
                       placeholder="https://wa.me/..."
                     />
                   </div>
@@ -450,34 +450,34 @@ export function Admin() {
                 <h2 className="text-2xl font-serif text-white mb-6">Управление контентом</h2>
                 
                 <div className="space-y-6">
-                  <div className="p-6 bg-zinc-800/50 rounded-lg">
+                  <div className="p-6 bg-[#0F2035]/50 rounded-lg">
                     <h3 className="text-lg font-medium text-white mb-4">О компании</h3>
                     <div className="space-y-4">
                       <div className="space-y-2">
-                        <Label className="text-zinc-300">Заголовок</Label>
+                        <Label className="text-blue-200">Заголовок</Label>
                         <Input
                           value={config.about.title}
                           onChange={(e) => updateField('about.title', e.target.value)}
-                          className="bg-zinc-800 border-zinc-700 text-white"
+                          className="bg-[#0F2035] border-blue-900 text-white"
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label className="text-zinc-300">Описание</Label>
+                        <Label className="text-blue-200">Описание</Label>
                         <Textarea
                           value={config.about.description}
                           onChange={(e) => updateField('about.description', e.target.value)}
-                          className="bg-zinc-800 border-zinc-700 text-white"
+                          className="bg-[#0F2035] border-blue-900 text-white"
                           rows={4}
                         />
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-6 bg-zinc-800/50 rounded-lg">
+                  <div className="p-6 bg-[#0F2035]/50 rounded-lg">
                     <h3 className="text-lg font-medium text-white mb-4">FAQ</h3>
                     <div className="space-y-4">
                       {config.faq.map((item, index) => (
-                        <div key={index} className="space-y-2 p-4 bg-zinc-800 rounded-lg">
+                        <div key={index} className="space-y-2 p-4 bg-[#0F2035] rounded-lg">
                           <Input
                             value={item.question}
                             onChange={(e) => {
@@ -486,7 +486,7 @@ export function Admin() {
                               updateField('faq', newFaq);
                             }}
                             placeholder="Вопрос"
-                            className="bg-zinc-900 border-zinc-700 text-white"
+                            className="bg-[#0B1629] border-blue-900 text-white"
                           />
                           <Textarea
                             value={item.answer}
@@ -496,7 +496,7 @@ export function Admin() {
                               updateField('faq', newFaq);
                             }}
                             placeholder="Ответ"
-                            className="bg-zinc-900 border-zinc-700 text-white"
+                            className="bg-[#0B1629] border-blue-900 text-white"
                             rows={3}
                           />
                         </div>
@@ -514,7 +514,7 @@ export function Admin() {
 
                 <div className="space-y-6">
                   {/* Главный экран */}
-                  <div className="p-6 bg-zinc-800/50 rounded-lg">
+                  <div className="p-6 bg-[#0F2035]/50 rounded-lg">
                     <h3 className="text-lg font-medium text-white mb-4">Главный экран (Hero)</h3>
                     <ImageUploader
                       imageKey="hero-bg"
@@ -529,9 +529,9 @@ export function Admin() {
                   </div>
 
                   {/* Логотип */}
-                  <div className="p-6 bg-zinc-800/50 rounded-lg">
+                  <div className="p-6 bg-[#0F2035]/50 rounded-lg">
                     <h3 className="text-lg font-medium text-white mb-2">Логотип</h3>
-                    <p className="text-zinc-500 text-xs mb-4">
+                    <p className="text-blue-400 text-xs mb-4">
                       Загрузите PNG/SVG с прозрачным фоном. После загрузки логотип отобразится в шапке сайта.
                     </p>
                     <div className="max-w-xs">
@@ -548,19 +548,19 @@ export function Admin() {
                       />
                     </div>
                     <div className="mt-4 space-y-2">
-                      <Label className="text-zinc-300">Alt текст логотипа</Label>
+                      <Label className="text-blue-200">Alt текст логотипа</Label>
                       <Input
                         value={config.logo.alt}
                         onChange={(e) => updateField('logo.alt', e.target.value)}
-                        className="bg-zinc-800 border-zinc-700 text-white"
+                        className="bg-[#0F2035] border-blue-900 text-white"
                       />
                     </div>
                   </div>
 
                   {/* OG изображение */}
-                  <div className="p-6 bg-zinc-800/50 rounded-lg">
+                  <div className="p-6 bg-[#0F2035]/50 rounded-lg">
                     <h3 className="text-lg font-medium text-white mb-2">OG-изображение (для соцсетей)</h3>
-                    <p className="text-zinc-500 text-xs mb-4">
+                    <p className="text-blue-400 text-xs mb-4">
                       Отображается при репосте ссылки в ВКонтакте, Telegram и других соцсетях. Рекомендуется 1200×630px.
                     </p>
                     <ImageUploader
@@ -576,7 +576,7 @@ export function Admin() {
                   </div>
 
                   {/* Категории */}
-                  <div className="p-6 bg-zinc-800/50 rounded-lg">
+                  <div className="p-6 bg-[#0F2035]/50 rounded-lg">
                     <h3 className="text-lg font-medium text-white mb-4">Категории мебели</h3>
                     <div className="grid sm:grid-cols-2 gap-6">
                       {config.categories.map((category) => (
@@ -596,7 +596,7 @@ export function Admin() {
                   </div>
 
                   {/* Портфолио */}
-                  <div className="p-6 bg-zinc-800/50 rounded-lg">
+                  <div className="p-6 bg-[#0F2035]/50 rounded-lg">
                     <h3 className="text-lg font-medium text-white mb-4">Портфолио</h3>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                       {config.portfolio.map((project, index) => (
@@ -616,7 +616,7 @@ export function Admin() {
                   </div>
 
                   {/* О компании */}
-                  <div className="p-6 bg-zinc-800/50 rounded-lg">
+                  <div className="p-6 bg-[#0F2035]/50 rounded-lg">
                     <h3 className="text-lg font-medium text-white mb-4">Раздел "О нас"</h3>
                     <div className="grid sm:grid-cols-3 gap-6">
                       {(['Фото производства 1', 'Фото производства 2', 'Фото материалов'] as const).map(
@@ -648,7 +648,7 @@ export function Admin() {
           <div className="mt-8 flex gap-4">
             <Button
               onClick={handleSave}
-              className="bg-amber-500 hover:bg-amber-600 text-black"
+              className="bg-orange-500 hover:bg-orange-600 text-black"
             >
               <Save className="w-4 h-4 mr-2" />
               Сохранить изменения
@@ -656,7 +656,7 @@ export function Admin() {
             <Button
               onClick={handleReset}
               variant="outline"
-              className="border-zinc-700 text-zinc-400 hover:text-white"
+              className="border-blue-900 text-blue-300 hover:text-white"
             >
               <RotateCcw className="w-4 h-4 mr-2" />
               Сбросить
@@ -668,7 +668,7 @@ export function Admin() {
       {/* Overlay для мобильного меню */}
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          className="fixed inset-0 bg-[#050D1A]/50 z-40 lg:hidden"
           onClick={() => setIsSidebarOpen(false)}
         />
       )}

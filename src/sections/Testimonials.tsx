@@ -17,16 +17,16 @@ export function Testimonials() {
   const currentTestimonial = config.testimonials[currentIndex];
 
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-24 bg-[#050D1A] relative overflow-hidden">
       {/* Декоративный фон */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Заголовок */}
         <div className="text-center mb-16">
-          <p className="text-amber-400 font-medium tracking-wider uppercase text-sm mb-4">
+          <p className="text-emerald-400 font-medium tracking-wider uppercase text-sm mb-4">
             Отзывы
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">
@@ -43,8 +43,8 @@ export function Testimonials() {
             {/* Основной отзыв */}
             <div className="glass rounded-2xl p-8 md:p-12 text-center">
               {/* Иконка кавычек */}
-              <div className="w-16 h-16 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto mb-8">
-                <Quote className="w-8 h-8 text-amber-400" />
+              <div className="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-8">
+                <Quote className="w-8 h-8 text-emerald-400" />
               </div>
 
               {/* Рейтинг */}
@@ -54,7 +54,7 @@ export function Testimonials() {
                     key={i}
                     className={`w-5 h-5 ${
                       i < currentTestimonial.rating
-                        ? 'text-amber-400 fill-amber-400'
+                        ? 'text-orange-400 fill-orange-400'
                         : 'text-white/20'
                     }`}
                   />
@@ -70,7 +70,7 @@ export function Testimonials() {
               <div>
                 <p className="text-white font-medium text-lg">{currentTestimonial.name}</p>
                 {currentTestimonial.project && (
-                  <p className="text-amber-400 text-sm">{currentTestimonial.project}</p>
+                  <p className="text-emerald-400 text-sm">{currentTestimonial.project}</p>
                 )}
                 <p className="text-white/40 text-sm mt-1">{currentTestimonial.date}</p>
               </div>
@@ -99,7 +99,7 @@ export function Testimonials() {
                 onClick={() => setCurrentIndex(index)}
                 className={`w-2 h-2 rounded-full transition-all ${
                   index === currentIndex
-                    ? 'w-8 bg-amber-400'
+                    ? 'w-8 bg-emerald-400'
                     : 'bg-white/30 hover:bg-white/50'
                 }`}
               />
@@ -110,19 +110,19 @@ export function Testimonials() {
         {/* Статистика */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="text-center">
-            <p className="text-4xl font-serif font-bold text-amber-400">4.9</p>
+            <p className="text-4xl font-serif font-bold text-orange-400">4.9</p>
             <p className="text-white/60 text-sm">Средний рейтинг</p>
           </div>
           <div className="text-center">
-            <p className="text-4xl font-serif font-bold text-amber-400">500+</p>
+            <p className="text-4xl font-serif font-bold text-orange-400">500+</p>
             <p className="text-white/60 text-sm">Довольных клиентов</p>
           </div>
           <div className="text-center">
-            <p className="text-4xl font-serif font-bold text-amber-400">98%</p>
+            <p className="text-4xl font-serif font-bold text-orange-400">98%</p>
             <p className="text-white/60 text-sm">Рекомендуют нас</p>
           </div>
           <div className="text-center">
-            <p className="text-4xl font-serif font-bold text-amber-400">150+</p>
+            <p className="text-4xl font-serif font-bold text-orange-400">150+</p>
             <p className="text-white/60 text-sm">Отзывов</p>
           </div>
         </div>

@@ -37,7 +37,7 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-black/95 backdrop-blur-md py-3 shadow-lg'
+          ? 'bg-[#050D1A]/95 backdrop-blur-md py-3 shadow-lg'
           : 'bg-transparent py-6'
       }`}
     >
@@ -52,13 +52,13 @@ export function Header() {
                 className="h-10 w-auto object-contain"
               />
             ) : (
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
-                <span className="text-black font-bold text-lg">КС</span>
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                <span className="text-white font-bold text-lg">КС</span>
               </div>
             )}
             <div className="hidden sm:block">
               <span className="text-xl font-serif font-semibold text-white">
-                Кухни <span className="text-amber-500">Сибири</span>
+                Кухни <span className="text-emerald-400">Сибири</span>
               </span>
               <p className="text-xs text-white/60">Премиум мебель на заказ</p>
             </div>
@@ -81,7 +81,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-6">
             <a
               href={`tel:${config.phone}`}
-              className="flex items-center gap-2 text-white hover:text-amber-400 transition-colors"
+              className="flex items-center gap-2 text-white hover:text-emerald-400 transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span className="font-medium">{config.phoneFormatted}</span>
@@ -106,7 +106,7 @@ export function Header() {
 
       {/* Мобильное меню */}
       <div
-        className={`lg:hidden fixed inset-0 top-[60px] bg-black/98 backdrop-blur-lg transition-all duration-300 ${
+        className={`lg:hidden fixed inset-0 top-[60px] bg-[#050D1A]/98 backdrop-blur-lg transition-all duration-300 ${
           isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
@@ -115,14 +115,14 @@ export function Header() {
             <button
               key={link.href}
               onClick={() => scrollToSection(link.href)}
-              className="text-2xl font-serif text-white hover:text-amber-400 transition-colors"
+              className="text-2xl font-serif text-white hover:text-emerald-400 transition-colors"
             >
               {link.label}
             </button>
           ))}
           <a
             href={`tel:${config.phone}`}
-            className="flex items-center gap-2 text-amber-400 text-xl mt-4"
+            className="flex items-center gap-2 text-emerald-400 text-xl mt-4"
           >
             <Phone className="w-5 h-5" />
             <span>{config.phoneFormatted}</span>

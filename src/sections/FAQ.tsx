@@ -11,12 +11,12 @@ export function FAQ() {
   };
 
   return (
-    <section className="py-24 bg-black">
+    <section className="py-24 bg-[#050D1A]">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Левая колонка - заголовок */}
           <div>
-            <p className="text-amber-400 font-medium tracking-wider uppercase text-sm mb-4">
+            <p className="text-emerald-400 font-medium tracking-wider uppercase text-sm mb-4">
               FAQ
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-6">
@@ -46,7 +46,7 @@ export function FAQ() {
                 >
                   <span className="text-white font-medium pr-4">{item.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-amber-400 flex-shrink-0 transition-transform ${
+                    className={`w-5 h-5 text-emerald-400 flex-shrink-0 transition-transform ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />

@@ -40,13 +40,13 @@ export function Hero() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050D1A] via-[#050D1A]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050D1A] via-transparent to-[#050D1A]/50" />
       </div>
 
       {/* Декоративные элементы */}
-      <div className="absolute top-1/4 right-10 w-px h-40 bg-gradient-to-b from-transparent via-amber-500/50 to-transparent hidden lg:block" />
-      <div className="absolute bottom-1/4 right-20 w-px h-60 bg-gradient-to-b from-transparent via-amber-500/30 to-transparent hidden lg:block" />
+      <div className="absolute top-1/4 right-10 w-px h-40 bg-gradient-to-b from-transparent via-blue-400/50 to-transparent hidden lg:block" />
+      <div className="absolute bottom-1/4 right-20 w-px h-60 bg-gradient-to-b from-transparent via-blue-400/30 to-transparent hidden lg:block" />
 
       {/* Контент */}
       <div className="relative z-10 container mx-auto px-4 lg:px-8 pt-32 pb-20">
@@ -54,7 +54,7 @@ export function Hero() {
           {/* Левая колонка - текст */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <p className="text-amber-400 font-medium tracking-wider uppercase text-sm">
+              <p className="text-emerald-400 font-medium tracking-wider uppercase text-sm">
                 {config.city} • {config.region}
               </p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-tight">
@@ -74,7 +74,7 @@ export function Hero() {
                 return (
                   <div key={index} className="flex items-start gap-3">
                     <div className="icon-gold flex-shrink-0">
-                      <Icon className="w-6 h-6 text-amber-400" />
+                      <Icon className="w-6 h-6 text-emerald-400" />
                     </div>
                     <div>
                       <p className="text-white font-medium text-sm">{benefit.title}</p>
@@ -105,15 +105,15 @@ export function Hero() {
             {/* Статистика */}
             <div className="flex gap-8 pt-4">
               <div>
-                <p className="text-3xl font-serif font-bold text-amber-400">500+</p>
+                <p className="text-3xl font-serif font-bold text-orange-400">500+</p>
                 <p className="text-white/60 text-sm">Проектов</p>
               </div>
               <div>
-                <p className="text-3xl font-serif font-bold text-amber-400">8 лет</p>
+                <p className="text-3xl font-serif font-bold text-orange-400">8 лет</p>
                 <p className="text-white/60 text-sm">Опыта</p>
               </div>
               <div>
-                <p className="text-3xl font-serif font-bold text-amber-400">30 дн</p>
+                <p className="text-3xl font-serif font-bold text-orange-400">30 дн</p>
                 <p className="text-white/60 text-sm">Срок</p>
               </div>
             </div>
@@ -163,7 +163,7 @@ export function Hero() {
 
       {/* Модальное окно формы */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="bg-zinc-900 border-zinc-700 text-white max-w-md">
+        <DialogContent className="bg-[#0B1629] border-blue-900 text-white max-w-md">
           <DialogHeader>
             <DialogTitle className="text-2xl font-serif text-center">
               Получить дизайн-проект
@@ -171,8 +171,8 @@ export function Hero() {
           </DialogHeader>
           {isSubmitted ? (
             <div className="text-center py-8">
-              <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-green-500" />
+              <div className="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-emerald-500" />
               </div>
               <h4 className="text-xl font-medium text-white mb-2">Спасибо!</h4>
               <p className="text-white/60">Мы свяжемся с вами в ближайшее время</p>

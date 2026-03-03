@@ -36,42 +36,42 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-black border-t border-white/10">
+    <footer className="bg-[#050D1A] border-t border-white/10">
       <div className="container mx-auto px-4 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Логотип и контакты */}
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
-                <span className="text-black font-bold text-xl">КС</span>
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                <span className="text-white font-bold text-xl">КС</span>
               </div>
               <div>
                 <span className="text-2xl font-serif font-semibold text-white">
-                  Кухни <span className="text-amber-500">Сибири</span>
+                  Кухни <span className="text-emerald-400">Сибири</span>
                 </span>
               </div>
             </a>
             <p className="text-white/60 mb-6 max-w-sm">
               Производство премиальной мебели на заказ в Иркутске. Индивидуальный дизайн, качественные материалы, гарантия 2 года.
             </p>
-            
+
             <div className="space-y-3">
               <a
                 href={`tel:${config.phone}`}
-                className="flex items-center gap-3 text-white hover:text-amber-400 transition-colors"
+                className="flex items-center gap-3 text-white hover:text-emerald-400 transition-colors"
               >
-                <Phone className="w-5 h-5 text-amber-400" />
+                <Phone className="w-5 h-5 text-emerald-400" />
                 <span>{config.phoneFormatted}</span>
               </a>
               <a
                 href={`mailto:${config.email}`}
-                className="flex items-center gap-3 text-white hover:text-amber-400 transition-colors"
+                className="flex items-center gap-3 text-white hover:text-emerald-400 transition-colors"
               >
-                <Mail className="w-5 h-5 text-amber-400" />
+                <Mail className="w-5 h-5 text-emerald-400" />
                 <span>{config.email}</span>
               </a>
               <div className="flex items-center gap-3 text-white/60">
-                <MapPin className="w-5 h-5 text-amber-400" />
+                <MapPin className="w-5 h-5 text-emerald-400" />
                 <span>{config.address}</span>
               </div>
             </div>
@@ -86,7 +86,7 @@ export function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-white/60 hover:text-amber-400 transition-colors"
+                      className="text-white/60 hover:text-emerald-400 transition-colors"
                     >
                       {link.label}
                     </a>
@@ -102,7 +102,7 @@ export function Footer() {
           <p className="text-white/40 text-sm">
             © {currentYear} {config.siteName}. Все права защищены.
           </p>
-          
+
           {/* Социальные сети */}
           <div className="flex gap-4">
             {config.social.instagram && (
@@ -110,7 +110,7 @@ export function Footer() {
                 href={config.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-amber-500/20 transition-colors"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-500/20 transition-colors"
               >
                 <Instagram className="w-5 h-5 text-white/60" />
               </a>
@@ -120,7 +120,7 @@ export function Footer() {
                 href={config.social.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-amber-500/20 transition-colors"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-500/20 transition-colors"
               >
                 <Send className="w-5 h-5 text-white/60" />
               </a>
@@ -130,7 +130,7 @@ export function Footer() {
                 href={config.social.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-amber-500/20 transition-colors"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-emerald-500/20 transition-colors"
               >
                 <MessageCircle className="w-5 h-5 text-white/60" />
               </a>

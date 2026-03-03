@@ -51,18 +51,18 @@ function PortfolioCard({ project, index, onClick }: PortfolioCardProps) {
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
           style={{ backgroundImage: `url(${imgSrc})` }}
         />
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-          <div className="w-14 h-14 rounded-full bg-amber-500/90 flex items-center justify-center">
-            <ZoomIn className="w-6 h-6 text-black" />
+        <div className="absolute inset-0 bg-[#050D1A]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <div className="w-14 h-14 rounded-full bg-emerald-500/90 flex items-center justify-center">
+            <ZoomIn className="w-6 h-6 text-white" />
           </div>
         </div>
         {project.price && (
-          <div className="absolute top-4 right-4 px-3 py-1 bg-black/70 backdrop-blur-sm rounded-full">
-            <span className="text-amber-400 font-medium text-sm">{project.price}</span>
+          <div className="absolute top-4 right-4 px-3 py-1 bg-[#050D1A]/70 backdrop-blur-sm rounded-full">
+            <span className="text-orange-400 font-medium text-sm">{project.price}</span>
           </div>
         )}
-        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
-          <h3 className="text-lg font-serif text-white group-hover:text-amber-400 transition-colors">
+        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#050D1A] to-transparent">
+          <h3 className="text-lg font-serif text-white group-hover:text-emerald-400 transition-colors">
             {project.title}
           </h3>
         </div>
@@ -87,11 +87,11 @@ export function Portfolio() {
     });
 
   return (
-    <section id="portfolio" className="py-24 bg-black">
+    <section id="portfolio" className="py-24 bg-[#050D1A]">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Заголовок */}
         <div className="text-center mb-12">
-          <p className="text-amber-400 font-medium tracking-wider uppercase text-sm mb-4">
+          <p className="text-emerald-400 font-medium tracking-wider uppercase text-sm mb-4">
             Портфолио
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-4">
@@ -111,7 +111,7 @@ export function Portfolio() {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeFilter === filter.id
-                    ? 'bg-amber-500 text-black'
+                    ? 'bg-emerald-500 text-white'
                     : 'bg-white/10 text-white hover:bg-white/20'
                 }`}
               >
@@ -128,7 +128,7 @@ export function Portfolio() {
               onClick={() => setActiveStyle(style.id)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activeStyle === style.id
-                  ? 'border border-amber-500 text-amber-400'
+                  ? 'border border-emerald-500 text-emerald-400'
                   : 'text-white/60 hover:text-white'
               }`}
             >
@@ -162,7 +162,7 @@ export function Portfolio() {
 
       {/* Модальное окно с деталями проекта */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="bg-zinc-900 border-zinc-700 text-white max-w-4xl p-0 overflow-hidden">
+        <DialogContent className="bg-[#0B1629] border-blue-900 text-white max-w-4xl p-0 overflow-hidden">
           {selectedProject && (
             <div className="grid md:grid-cols-2">
               {/* Изображение */}
@@ -174,7 +174,7 @@ export function Portfolio() {
                 <h3 className="text-2xl font-serif font-bold text-white mb-2">
                   {selectedProject.title}
                 </h3>
-                <p className="text-amber-400 text-lg font-medium mb-4">
+                <p className="text-orange-400 text-lg font-medium mb-4">
                   {selectedProject.price}
                 </p>
                 <p className="text-white/70 mb-6">

@@ -9,7 +9,7 @@ export function About() {
   const img2 = useCustomImage('about-img-2', config.about.images[2] || '/images/about/materials.jpg');
 
   return (
-    <section id="about" className="py-24 bg-zinc-950">
+    <section id="about" className="py-24 bg-[#080F1E]">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Левая колонка - изображения */}
@@ -34,13 +34,13 @@ export function About() {
             </div>
 
             {/* Декоративные элементы */}
-            <div className="absolute bottom-0 right-0 w-24 h-24 border-2 border-amber-500/30 rounded-lg -z-10" />
-            <div className="absolute top-0 left-0 w-24 h-24 border-2 border-amber-500/30 rounded-lg -z-10" />
+            <div className="absolute bottom-0 right-0 w-24 h-24 border-2 border-blue-500/30 rounded-lg -z-10" />
+            <div className="absolute top-0 left-0 w-24 h-24 border-2 border-blue-500/30 rounded-lg -z-10" />
           </div>
 
           {/* Правая колонка - контент */}
           <div>
-            <p className="text-amber-400 font-medium tracking-wider uppercase text-sm mb-4">
+            <p className="text-emerald-400 font-medium tracking-wider uppercase text-sm mb-4">
               О производстве
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-6">
@@ -54,8 +54,8 @@ export function About() {
             <div className="space-y-4 mb-10">
               {config.about.features.map((feature, index) => (
                 <div key={index} className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-4 h-4 text-amber-400" />
+                  <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-emerald-400" />
                   </div>
                   <span className="text-white/80">{feature}</span>
                 </div>
@@ -66,7 +66,7 @@ export function About() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
               {config.about.stats.map((stat, index) => (
                 <div key={index} className="text-center sm:text-left">
-                  <p className="text-3xl font-serif font-bold text-amber-400">{stat.value}</p>
+                  <p className="text-3xl font-serif font-bold text-orange-400">{stat.value}</p>
                   <p className="text-white/60 text-sm">{stat.label}</p>
                 </div>
               ))}
@@ -81,7 +81,7 @@ export function About() {
             {config.materials.map((material, index) => (
               <div key={index} className="group text-center">
                 <div className="w-24 h-24 mx-auto mb-3 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                  <span className="text-xl font-serif font-bold text-white/60 group-hover:text-amber-400 transition-colors">
+                  <span className="text-xl font-serif font-bold text-white/60 group-hover:text-emerald-400 transition-colors">
                     {material.name}
                   </span>
                 </div>
