@@ -61,7 +61,7 @@ export function QualityReliability() {
           {/* Right — video preview */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]" style={{backgroundColor:'#242424'}}>
-              <img src="/images/about/factory-1.jpg" alt="Производство кухонь"
+              <img src="./images/about/factory-1.jpg" alt="Производство кухонь"
                 className="w-full h-full object-cover opacity-70" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <button className="w-16 h-16 rounded-full flex items-center justify-center transition-all hover:scale-110"

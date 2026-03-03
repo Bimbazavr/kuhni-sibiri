@@ -4,9 +4,9 @@ import { useCustomImage } from '@/hooks/useCustomImage';
 
 export function About() {
   const config = getConfig();
-  const img0 = useCustomImage('about-img-0', config.about.images[0] || '/images/about/factory-1.jpg');
-  const img1 = useCustomImage('about-img-1', config.about.images[1] || '/images/about/factory-2.jpg');
-  const img2 = useCustomImage('about-img-2', config.about.images[2] || '/images/about/materials.jpg');
+  const img0 = useCustomImage('about-img-0', config.about.images[0] || './images/about/factory-1.jpg');
+  const img1 = useCustomImage('about-img-1', config.about.images[1] || './images/about/factory-2.jpg');
+  const img2 = useCustomImage('about-img-2', config.about.images[2] || './images/about/materials.jpg');
 
   return (
     <section id="about" className="py-24 bg-[#080F1E]">

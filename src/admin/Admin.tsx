@@ -519,7 +519,7 @@ export function Admin() {
                     <ImageUploader
                       imageKey="hero-bg"
                       label="Фоновое изображение"
-                      currentSrc={getImgSrc('hero-bg', '/images/hero-bg.jpg')}
+                      currentSrc={getImgSrc('hero-bg', './images/hero-bg.jpg')}
                       maxWidth={1920}
                       maxHeight={1080}
                       quality={0.85}
@@ -538,7 +538,7 @@ export function Admin() {
                       <ImageUploader
                         imageKey="logo"
                         label="Изображение логотипа"
-                        currentSrc={getImgSrc('logo', '/images/hero-bg.jpg')}
+                        currentSrc={getImgSrc('logo', './images/hero-bg.jpg')}
                         maxWidth={400}
                         maxHeight={200}
                         quality={0.92}
@@ -566,7 +566,7 @@ export function Admin() {
                     <ImageUploader
                       imageKey="og-image"
                       label="OG-изображение"
-                      currentSrc={getImgSrc('og-image', '/images/og-image.jpg')}
+                      currentSrc={getImgSrc('og-image', './images/og-image.jpg')}
                       maxWidth={1200}
                       maxHeight={630}
                       quality={0.85}
@@ -627,7 +627,7 @@ export function Admin() {
                             label={label}
                             currentSrc={getImgSrc(
                               `about-img-${index}`,
-                              config.about.images[index] || '/images/hero-bg.jpg'
+                              config.about.images[index] || './images/hero-bg.jpg'
                             )}
                             maxWidth={700}
                             maxHeight={933}

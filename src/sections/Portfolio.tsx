@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { ZoomIn, ArrowRight } from 'lucide-react';
 
 const projects = [
-  { id: 1, title: 'Кухня в стиле минимализм', area: '18 м²', price: 'от 185 000 руб.', img: '/images/portfolio/kitchen-1.jpg', style: 'Минимализм' },
-  { id: 2, title: 'Классическая угловая кухня', area: '24 м²', price: 'от 219 000 руб.', img: '/images/portfolio/kitchen-2.jpg', style: 'Классика' },
-  { id: 3, title: 'Современная кухня-остров', area: '32 м²', price: 'от 310 000 руб.', img: '/images/portfolio/kitchen-3.jpg', style: 'Модерн' },
-  { id: 4, title: 'Кухня с баром в скандинавском стиле', area: '22 м²', price: 'от 240 000 руб.', img: '/images/categories/kitchen.jpg', style: 'Скандинавский' },
-  { id: 5, title: 'П-образная кухня с пеналами', area: '28 м²', price: 'от 275 000 руб.', img: '/images/portfolio/kitchen-1.jpg', style: 'Модерн' },
-  { id: 6, title: 'Кухня с высокими фасадами', area: '20 м²', price: 'от 198 000 руб.', img: '/images/portfolio/kitchen-2.jpg', style: 'Минимализм' },
+  { id: 1, title: 'Кухня в стиле минимализм', area: '18 м²', price: 'от 185 000 руб.', img: './images/portfolio/kitchen-1.jpg', style: 'Минимализм' },
+  { id: 2, title: 'Классическая угловая кухня', area: '24 м²', price: 'от 219 000 руб.', img: './images/portfolio/kitchen-2.jpg', style: 'Классика' },
+  { id: 3, title: 'Современная кухня-остров', area: '32 м²', price: 'от 310 000 руб.', img: './images/portfolio/kitchen-3.jpg', style: 'Модерн' },
+  { id: 4, title: 'Кухня с баром в скандинавском стиле', area: '22 м²', price: 'от 240 000 руб.', img: './images/categories/kitchen.jpg', style: 'Скандинавский' },
+  { id: 5, title: 'П-образная кухня с пеналами', area: '28 м²', price: 'от 275 000 руб.', img: './images/portfolio/kitchen-1.jpg', style: 'Модерн' },
+  { id: 6, title: 'Кухня с высокими фасадами', area: '20 м²', price: 'от 198 000 руб.', img: './images/portfolio/kitchen-2.jpg', style: 'Минимализм' },
 ];
 
 export function Portfolio() {

@@ -54,7 +54,7 @@ export function MaterialsTabs() {
     <section className="py-24 relative overflow-hidden" style={{backgroundColor:'#1A1A1A'}}>
       {/* Decorative BG */}
       <div className="absolute right-0 top-0 w-1/3 h-full opacity-10">
-        <img src="/images/about/materials.jpg" alt="" className="w-full h-full object-cover" />
+        <img src="./images/about/materials.jpg" alt="" className="w-full h-full object-cover" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 lg:px-8">

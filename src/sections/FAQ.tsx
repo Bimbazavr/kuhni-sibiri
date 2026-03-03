@@ -64,7 +64,7 @@ export function FAQ() {
           <div className="lg:col-span-2 flex items-start pt-20">
             <div className="w-full rounded-2xl overflow-hidden" style={{backgroundColor:'#242424', border:'1px solid #333'}}>
               <div className="aspect-square overflow-hidden relative">
-                <img src="/images/categories/wardrobe.jpg" alt="Александр — менеджер"
+                <img src="./images/categories/wardrobe.jpg" alt="Александр — менеджер"
                   className="w-full h-full object-cover opacity-80" />
                 <div className="absolute inset-0" style={{background:'linear-gradient(to top, rgba(36,36,36,1) 0%, transparent 50%)'}} />
                 <div className="absolute bottom-4 left-4">

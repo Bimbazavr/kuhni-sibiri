@@ -21,7 +21,7 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* BG */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/hero-bg.jpg')" }} />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('./images/hero-bg.jpg')" }} />
         <div className="absolute inset-0" style={{background:'linear-gradient(135deg, rgba(26,26,26,0.92) 0%, rgba(26,26,26,0.75) 60%, rgba(26,26,26,0.50) 100%)'}} />
       </div>
 

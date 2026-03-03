@@ -15,7 +15,7 @@ export function CatalogDownload() {
     <section className="relative py-20 overflow-hidden">
       {/* BG */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/about/materials.jpg')" }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('./images/about/materials.jpg')" }} />
         <div className="absolute inset-0" style={{background:'rgba(26,26,26,0.88)'}} />
       </div>
 

@@ -146,7 +146,7 @@ export function Calculator() {
           <div className="hidden lg:block">
             <div className="relative">
               <div className="rounded-2xl overflow-hidden aspect-[3/4]" style={{backgroundColor:'#242424'}}>
-                <img src="/images/about/factory-2.jpg" alt="Консультация по кухне"
+                <img src="./images/about/factory-2.jpg" alt="Консультация по кухне"
                   className="w-full h-full object-cover opacity-80" />
                 <div className="absolute inset-0" style={{background:'linear-gradient(to top, rgba(26,26,26,0.8) 0%, transparent 50%)'}} />
                 <div className="absolute bottom-8 left-8 right-8">

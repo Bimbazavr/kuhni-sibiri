@@ -152,11 +152,11 @@ export const defaultConfig: SiteConfig = {
       "дизайн кухни Иркутск",
       "замер кухни Иркутск"
     ],
-    ogImage: "/images/og-image.jpg"
+    ogImage: "./images/og-image.jpg"
   },
   
   logo: {
-    src: "/images/logo.svg",
+    src: "./images/logo.svg",
     alt: "Кухни Сибири - производство мебели на заказ",
     width: 180,
     height: 50
@@ -202,28 +202,28 @@ export const defaultConfig: SiteConfig = {
       id: "kitchens",
       name: "Кухни",
       description: "Индивидуальные кухни любой сложности от классики до модерна",
-      image: "/images/categories/kitchen.jpg",
+      image: "./images/categories/kitchen.jpg",
       link: "#kitchens"
     },
     {
       id: "wardrobes",
       name: "Шкафы-купе",
       description: "Встроенные и отдельностоящие шкафы с раздвижными дверями",
-      image: "/images/categories/wardrobe.jpg",
+      image: "./images/categories/wardrobe.jpg",
       link: "#wardrobes"
     },
     {
       id: "dressing",
       name: "Гардеробные",
       description: "Продуманные системы хранения для вашей одежды и аксессуаров",
-      image: "/images/categories/dressing.jpg",
+      image: "./images/categories/dressing.jpg",
       link: "#dressing"
     },
     {
       id: "other",
       name: "Другая мебель",
       description: "Прихожие, детские, офисная мебель и другие решения",
-      image: "/images/categories/other.jpg",
+      image: "./images/categories/other.jpg",
       link: "#other"
     }
   ],
@@ -234,7 +234,7 @@ export const defaultConfig: SiteConfig = {
       title: "Кухня в современном стиле",
       category: "kitchens",
       style: "modern",
-      image: "/images/portfolio/kitchen-1.jpg",
+      image: "./images/portfolio/kitchen-1.jpg",
       price: "850 000 ₽",
       description: "Кухня 12 м² с островом, фасады МДФ эмаль, столешница кварц"
     },
@@ -243,7 +243,7 @@ export const defaultConfig: SiteConfig = {
       title: "Классическая кухня",
       category: "kitchens",
       style: "classic",
-      image: "/images/portfolio/kitchen-2.jpg",
+      image: "./images/portfolio/kitchen-2.jpg",
       price: "1 200 000 ₽",
       description: "Кухня 15 м², массив дуба, фрезеровка, патина"
     },
@@ -252,7 +252,7 @@ export const defaultConfig: SiteConfig = {
       title: "Шкаф-купе в спальню",
       category: "wardrobes",
       style: "modern",
-      image: "/images/portfolio/wardrobe-1.jpg",
+      image: "./images/portfolio/wardrobe-1.jpg",
       price: "180 000 ₽",
       description: "Встроенный шкаф 3 метра, зеркальные двери, LED-подсветка"
     },
@@ -261,7 +261,7 @@ export const defaultConfig: SiteConfig = {
       title: "Гардеробная комната",
       category: "dressing",
       style: "modern",
-      image: "/images/portfolio/dressing-1.jpg",
+      image: "./images/portfolio/dressing-1.jpg",
       price: "320 000 ₽",
       description: "Гардеробная 8 м² с островом, система хранения под заказ"
     },
@@ -270,7 +270,7 @@ export const defaultConfig: SiteConfig = {
       title: "Кухня-гостиная",
       category: "kitchens",
       style: "minimalism",
-      image: "/images/portfolio/kitchen-3.jpg",
+      image: "./images/portfolio/kitchen-3.jpg",
       price: "1 500 000 ₽",
       description: "Единое пространство 25 м², без ручек, интегрированная техника"
     },
@@ -279,7 +279,7 @@ export const defaultConfig: SiteConfig = {
       title: "Прихожая с зеркалом",
       category: "other",
       style: "modern",
-      image: "/images/portfolio/hall-1.jpg",
+      image: "./images/portfolio/hall-1.jpg",
       price: "95 000 ₽",
       description: "Компактная прихожая с тумбой и вешалкой"
     }
@@ -358,9 +358,9 @@ export const defaultConfig: SiteConfig = {
       "Контроль качества на каждом этапе"
     ],
     images: [
-      "/images/about/factory-1.jpg",
-      "/images/about/factory-2.jpg",
-      "/images/about/materials.jpg"
+      "./images/about/factory-1.jpg",
+      "./images/about/factory-2.jpg",
+      "./images/about/materials.jpg"
     ],
     stats: [
       { value: "500+", label: "Выполненных проектов" },
@@ -373,22 +373,22 @@ export const defaultConfig: SiteConfig = {
   materials: [
     {
       name: "Egger",
-      logo: "/images/brands/egger.svg",
+      logo: "./images/brands/egger.svg",
       description: "Австрийские ЛДСП премиум-класса"
     },
     {
       name: "Kronospan",
-      logo: "/images/brands/kronospan.svg",
+      logo: "./images/brands/kronospan.svg",
       description: "Высококачественные плиты МДФ и ЛДСП"
     },
     {
       name: "Blum",
-      logo: "/images/brands/blum.svg",
+      logo: "./images/brands/blum.svg",
       description: "Австрийская фурнитура с доводчиками"
     },
     {
       name: "Hettich",
-      logo: "/images/brands/hettich.svg",
+      logo: "./images/brands/hettich.svg",
       description: "Немецкая фурнитура для мебели"
     }
   ],

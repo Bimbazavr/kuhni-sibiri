@@ -60,7 +60,7 @@ export function Consultation() {
           {/* Right */}
           <div className="relative">
             <div className="rounded-2xl overflow-hidden aspect-[4/3]" style={{backgroundColor:'#242424'}}>
-              <img src="/images/portfolio/kitchen-3.jpg" alt="Бесплатная консультация"
+              <img src="./images/portfolio/kitchen-3.jpg" alt="Бесплатная консультация"
                 className="w-full h-full object-cover opacity-75" />
               <div className="absolute inset-0" style={{background:'linear-gradient(135deg, transparent 50%, rgba(26,26,26,0.8))'}} />
               <div className="absolute top-6 right-6 rounded-xl p-4" style={{backgroundColor:'rgba(224,201,184,0.95)'}}>

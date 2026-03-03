@@ -1,10 +1,10 @@
 import { ArrowRight } from 'lucide-react';
 
 const products = [
-  { title: 'Гардеробные системы', desc: 'Модульные системы хранения под заказ', price: 'от 85 000 ₽', img: '/images/categories/dressing.jpg' },
-  { title: 'Шкафы-купе', desc: 'Встроенные и корпусные шкафы-купе', price: 'от 65 000 ₽', img: '/images/categories/wardrobe.jpg' },
-  { title: 'Универсальные шкафы', desc: 'Для спальни, гостиной, офиса', price: 'от 45 000 ₽', img: '/images/portfolio/wardrobe-1.jpg' },
-  { title: 'Детские комнаты', desc: 'Безопасная мебель для детей', price: 'от 120 000 ₽', img: '/images/portfolio/dressing-1.jpg' },
+  { title: 'Гардеробные системы', desc: 'Модульные системы хранения под заказ', price: 'от 85 000 ₽', img: './images/categories/dressing.jpg' },
+  { title: 'Шкафы-купе', desc: 'Встроенные и корпусные шкафы-купе', price: 'от 65 000 ₽', img: './images/categories/wardrobe.jpg' },
+  { title: 'Универсальные шкафы', desc: 'Для спальни, гостиной, офиса', price: 'от 45 000 ₽', img: './images/portfolio/wardrobe-1.jpg' },
+  { title: 'Детские комнаты', desc: 'Безопасная мебель для детей', price: 'от 120 000 ₽', img: './images/portfolio/dressing-1.jpg' },
 ];
 
 export function Crosssell() {

@@ -61,7 +61,7 @@ export function Advantages() {
           {/* Right — visual */}
           <div className="relative flex flex-col items-center">
             <div className="rounded-2xl overflow-hidden w-full max-w-sm" style={{backgroundColor:'#242424'}}>
-              <img src="/images/categories/kitchen.jpg" alt="Преимущества работы с нами"
+              <img src="./images/categories/kitchen.jpg" alt="Преимущества работы с нами"
                 className="w-full object-cover aspect-[4/5] opacity-80" />
             </div>
             {/* Floating badge */}
