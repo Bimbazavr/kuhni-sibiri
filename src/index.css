@@ -29,9 +29,9 @@
     --radius: 0.75rem;
 
     /* Custom design tokens */
-    --site-bg: #1A1A1A;
+    --site-bg: #ffffff;
     --site-card: #242424;
-    --site-accent: #E0C9B8;
+    --site-accent: #0015fb;
     --site-accent-hover: #D4AF37;
     --site-text: #FFFFFF;
     --site-text-muted: #B0B0B0;

@@ -40,9 +40,9 @@ module.exports = {
         },
         // Site-specific design tokens
         site: {
-          bg: '#1A1A1A',
+          bg: '#ffffff',
           card: '#242424',
-          accent: '#E0C9B8',
+          accent: '#0015fb',
           gold: '#D4AF37',
           muted: '#B0B0B0',
           border: '#333333',
