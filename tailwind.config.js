@@ -38,16 +38,29 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        // Site-specific design tokens
+        site: {
+          bg: '#1A1A1A',
+          card: '#242424',
+          accent: '#E0C9B8',
+          gold: '#D4AF37',
+          muted: '#B0B0B0',
+          border: '#333333',
         },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background, 0 0% 14%))",
+          foreground: "hsl(var(--sidebar-foreground, 0 0% 100%))",
+          primary: "hsl(var(--sidebar-primary, 29 38% 80%))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground, 0 0% 10%))",
+          accent: "hsl(var(--sidebar-accent, 0 0% 20%))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground, 0 0% 100%))",
+          border: "hsl(var(--sidebar-border, 0 0% 20%))",
+          ring: "hsl(var(--sidebar-ring, 29 38% 80%))",
+        },
+      },
+      fontFamily: {
+        heading: ['Montserrat', 'sans-serif'],
+        body: ['Manrope', 'sans-serif'],
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -58,6 +71,8 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        accent: "0 4px 24px rgba(224, 201, 184, 0.2)",
+        gold: "0 4px 24px rgba(212, 175, 55, 0.3)",
       },
       keyframes: {
         "accordion-down": {
@@ -72,11 +87,16 @@ module.exports = {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
         },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
+        "fade-up": "fade-up 0.6s ease-out forwards",
       },
     },
   },

@@ -1,216 +1,125 @@
 import { useState } from 'react';
-import { Ruler, Clock, Shield, Palette, ChevronRight } from 'lucide-react';
-import { getConfig } from '@/config';
-import { useCustomImage } from '@/hooks/useCustomImage';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-
-const iconMap: Record<string, React.ElementType> = {
-  ruler: Ruler,
-  clock: Clock,
-  shield: Shield,
-  cube: Palette,
-  palette: Palette,
-  factory: Clock,
-  truck: ChevronRight,
-};
+import { ChevronRight, Check } from 'lucide-react';
 
 export function Hero() {
-  const config = getConfig();
-  const heroBg = useCustomImage('hero-bg', '/images/hero-bg.jpg');
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formData, setFormData] = useState({ name: '', phone: '' });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [form, setForm] = useState({ name: '', phone: '' });
+  const [sent, setSent] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Здесь будет отправка формы
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsModalOpen(false);
-      setIsSubmitted(false);
-      setFormData({ name: '', phone: '' });
-    }, 2000);
+    setSent(true);
+    setForm({ name: '', phone: '' });
+    setTimeout(() => setSent(false), 4000);
+  };
+
+  const scrollTo = (href: string) => {
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Фоновое изображение с оверлеем */}
+      {/* BG */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050D1A] via-[#050D1A]/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050D1A] via-transparent to-[#050D1A]/50" />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/hero-bg.jpg')" }} />
+        <div className="absolute inset-0" style={{background:'linear-gradient(135deg, rgba(26,26,26,0.92) 0%, rgba(26,26,26,0.75) 60%, rgba(26,26,26,0.50) 100%)'}} />
       </div>
 
-      {/* Декоративные элементы */}
-      <div className="absolute top-1/4 right-10 w-px h-40 bg-gradient-to-b from-transparent via-blue-400/50 to-transparent hidden lg:block" />
-      <div className="absolute bottom-1/4 right-20 w-px h-60 bg-gradient-to-b from-transparent via-blue-400/30 to-transparent hidden lg:block" />
+      {/* Декор линии */}
+      <div className="absolute right-0 top-1/4 w-px h-64 hidden xl:block" style={{background:'linear-gradient(to bottom, transparent, rgba(224,201,184,0.3), transparent)'}} />
 
-      {/* Контент */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 pt-32 pb-20">
+      <div className="relative z-10 container mx-auto px-4 lg:px-8 pt-28 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Левая колонка - текст */}
+          {/* Left */}
           <div className="space-y-8">
-            <div className="space-y-4">
-              <p className="text-emerald-400 font-medium tracking-wider uppercase text-sm">
-                {config.city} • {config.region}
-              </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold text-white leading-tight">
-                <span className="text-gold-gradient">{config.utp.title}</span>
-                <br />
-                <span className="text-white">от производителя</span>
+            <div className="space-y-2">
+              <p className="section-label">Иркутск • Производство кухонь</p>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black uppercase leading-none tracking-tight" style={{fontFamily:'Montserrat,sans-serif'}}>
+                КУХНИ
               </h1>
-              <p className="text-lg sm:text-xl text-white/80 max-w-xl">
-                {config.utp.subtitle}
+              <p className="text-xl sm:text-2xl font-medium text-[#E0C9B8] uppercase tracking-wider" style={{fontFamily:'Montserrat,sans-serif'}}>
+                Модульная архитектура<br />сердца дома
+              </p>
+              <p className="text-[#B0B0B0] text-base max-w-lg pt-2 leading-relaxed">
+                Создаём кухни, которые объединяют пространство и комфорт. Индивидуальный подход, собственное производство, гарантия 2 года.
               </p>
             </div>
 
-            {/* Преимущества */}
-            <div className="grid grid-cols-2 gap-4">
-              {config.utp.benefits.map((benefit, index) => {
-                const Icon = iconMap[benefit.icon] || Shield;
-                return (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="icon-gold flex-shrink-0">
-                      <Icon className="w-6 h-6 text-emerald-400" />
-                    </div>
-                    <div>
-                      <p className="text-white font-medium text-sm">{benefit.title}</p>
-                      <p className="text-white/60 text-xs">{benefit.description}</p>
-                    </div>
+            {/* Benefits */}
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                '50+ сотрудников в команде',
+                'Срок изготовления 30 дней',
+                'Бесплатный замер и 3D-проект',
+                'Гарантия 2 года на продукцию',
+              ].map((b, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor:'rgba(224,201,184,0.2)', border:'1px solid #E0C9B8'}}>
+                    <Check className="w-3 h-3" style={{color:'#E0C9B8'}} />
                   </div>
-                );
-              })}
+                  <span className="text-sm text-[#B0B0B0]">{b}</span>
+                </div>
+              ))}
             </div>
 
-            {/* CTA кнопки */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="btn-gold flex items-center justify-center gap-2"
-              >
-                Получить дизайн-проект
-                <ChevronRight className="w-5 h-5" />
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-4">
+              <button onClick={() => scrollTo('#calculator')} className="btn-accent flex items-center gap-2">
+                Рассчитать стоимость <ChevronRight className="w-4 h-4" />
               </button>
-              <a
-                href="#portfolio"
-                className="px-8 py-4 border border-white/30 text-white rounded-sm hover:bg-white/10 transition-colors text-center"
-              >
-                Смотреть работы
-              </a>
+              <button onClick={() => scrollTo('#portfolio')} className="btn-outline">
+                Смотреть проекты
+              </button>
             </div>
 
-            {/* Статистика */}
-            <div className="flex gap-8 pt-4">
-              <div>
-                <p className="text-3xl font-serif font-bold text-orange-400">500+</p>
-                <p className="text-white/60 text-sm">Проектов</p>
-              </div>
-              <div>
-                <p className="text-3xl font-serif font-bold text-orange-400">8 лет</p>
-                <p className="text-white/60 text-sm">Опыта</p>
-              </div>
-              <div>
-                <p className="text-3xl font-serif font-bold text-orange-400">30 дн</p>
-                <p className="text-white/60 text-sm">Срок</p>
-              </div>
+            {/* Stats */}
+            <div className="flex gap-8 pt-2 border-t border-[#333]">
+              {[['500+','проектов'],['8 лет','опыта'],['30 дн','срок'],['2 г.','гарантия']].map(([v,l]) => (
+                <div key={l}>
+                  <p className="text-2xl font-black" style={{color:'#E0C9B8', fontFamily:'Montserrat,sans-serif'}}>{v}</p>
+                  <p className="text-xs text-[#B0B0B0] mt-0.5">{l}</p>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Правая колонка - форма */}
+          {/* Right — form */}
           <div className="hidden lg:block">
-            <div className="glass rounded-lg p-8 max-w-md ml-auto">
-              <h3 className="text-2xl font-serif text-white mb-2">
-                Бесплатный расчет стоимости
-              </h3>
-              <p className="text-white/60 mb-6">
-                Оставьте заявку и получите 3D-проект кухни бесплатно
-              </p>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Ваше имя"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="input-gold w-full"
-                    required
-                  />
+            <div className="rounded-xl p-8 max-w-sm ml-auto" style={{backgroundColor:'rgba(36,36,36,0.9)', border:'1px solid #333', backdropFilter:'blur(10px)'}}>
+              {sent ? (
+                <div className="text-center py-8">
+                  <div className="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center" style={{backgroundColor:'rgba(224,201,184,0.15)', border:'1px solid #E0C9B8'}}>
+                    <Check className="w-7 h-7" style={{color:'#E0C9B8'}} />
+                  </div>
+                  <h3 className="text-white font-bold text-xl mb-2">Заявка отправлена!</h3>
+                  <p className="text-[#B0B0B0] text-sm">Мы свяжемся с вами в ближайшее время</p>
                 </div>
-                <div>
-                  <input
-                    type="tel"
-                    placeholder="Ваш телефон"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="input-gold w-full"
-                    required
-                  />
-                </div>
-                <button type="submit" className="btn-gold w-full">
-                  Получить расчет
-                </button>
-              </form>
-              <p className="text-white/40 text-xs text-center mt-4">
-                Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
-              </p>
+              ) : (
+                <>
+                  <h3 className="text-white font-bold text-xl uppercase tracking-wide mb-1" style={{fontFamily:'Montserrat,sans-serif'}}>Оставить заявку</h3>
+                  <p className="text-[#B0B0B0] text-sm mb-6">Получите бесплатный 3D-проект вашей кухни</p>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <input type="text" placeholder="Ваше имя" value={form.name}
+                      onChange={e => setForm({...form, name: e.target.value})}
+                      className="input-dark" required />
+                    <input type="tel" placeholder="+7 (___) ___-__-__" value={form.phone}
+                      onChange={e => setForm({...form, phone: e.target.value})}
+                      className="input-dark" required />
+                    <button type="submit" className="btn-accent w-full">Получить расчёт</button>
+                  </form>
+                  <p className="text-[#555] text-xs text-center mt-4">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+                </>
+              )}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Модальное окно формы */}
-      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="bg-[#0B1629] border-blue-900 text-white max-w-md">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-serif text-center">
-              Получить дизайн-проект
-            </DialogTitle>
-          </DialogHeader>
-          {isSubmitted ? (
-            <div className="text-center py-8">
-              <div className="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-emerald-500" />
-              </div>
-              <h4 className="text-xl font-medium text-white mb-2">Спасибо!</h4>
-              <p className="text-white/60">Мы свяжемся с вами в ближайшее время</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 mt-4">
-              <div>
-                <label className="text-white/80 text-sm mb-2 block">Ваше имя</label>
-                <input
-                  type="text"
-                  placeholder="Иван"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="input-gold w-full"
-                  required
-                />
-              </div>
-              <div>
-                <label className="text-white/80 text-sm mb-2 block">Ваш телефон</label>
-                <input
-                  type="tel"
-                  placeholder="+7 (___) ___-__-__"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="input-gold w-full"
-                  required
-                />
-              </div>
-              <button type="submit" className="btn-gold w-full">
-                Отправить заявку
-              </button>
-              <p className="text-white/40 text-xs text-center">
-                Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
-              </p>
-            </form>
-          )}
-        </DialogContent>
-      </Dialog>
+      {/* Scroll hint */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#555]">
+        <span className="text-xs tracking-widest uppercase">Листайте</span>
+        <div className="w-px h-10" style={{background:'linear-gradient(to bottom, #555, transparent)'}} />
+      </div>
     </section>
   );
 }

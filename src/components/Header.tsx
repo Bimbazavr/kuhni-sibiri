@@ -1,137 +1,95 @@
 import { useState, useEffect } from 'react';
-import { Phone, Menu, X } from 'lucide-react';
-import { getConfig } from '@/config';
-import { useCustomImage } from '@/hooks/useCustomImage';
+import { Phone, Menu, X, MessageCircle } from 'lucide-react';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const config = getConfig();
-  const logoSrc = useCustomImage('logo', '');
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 80);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { href: '#catalog', label: 'Каталог' },
-    { href: '#portfolio', label: 'Портфолио' },
-    { href: '#process', label: 'Процесс' },
-    { href: '#about', label: 'О нас' },
-    { href: '#contacts', label: 'Контакты' },
+    { href: '#quality', label: 'О компании' },
+    { href: '#portfolio', label: 'Проекты' },
+    { href: '#calculator', label: 'Калькулятор' },
+    { href: '#process', label: 'Этапы' },
+    { href: '#faq', label: 'FAQ' },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const scrollTo = (href: string) => {
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
     setIsMobileMenuOpen(false);
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-[#050D1A]/95 backdrop-blur-md py-3 shadow-lg'
-          : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Логотип */}
-          <a href="#" className="flex items-center gap-3">
-            {logoSrc ? (
-              <img
-                src={logoSrc}
-                alt={config.logo.alt}
-                className="h-10 w-auto object-contain"
-              />
-            ) : (
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">КС</span>
-              </div>
-            )}
-            <div className="hidden sm:block">
-              <span className="text-xl font-serif font-semibold text-white">
-                Кухни <span className="text-emerald-400">Сибири</span>
-              </span>
-              <p className="text-xs text-white/60">Премиум мебель на заказ</p>
-            </div>
-          </a>
-
-          {/* Навигация - десктоп */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="nav-link text-sm font-medium"
-              >
-                {link.label}
-              </button>
-            ))}
-          </nav>
-
-          {/* Контакты и CTA */}
-          <div className="hidden lg:flex items-center gap-6">
-            <a
-              href={`tel:${config.phone}`}
-              className="flex items-center gap-2 text-white hover:text-emerald-400 transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              <span className="font-medium">{config.phoneFormatted}</span>
-            </a>
-            <button
-              onClick={() => scrollToSection('#contacts')}
-              className="btn-gold text-sm"
-            >
-              Вызвать замерщика
-            </button>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
+      isScrolled ? 'bg-[#1A1A1A]/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'
+    }`}>
+      <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
+        {/* Logo */}
+        <a href="#" className="flex items-center gap-3" onClick={() => window.scrollTo({top:0,behavior:'smooth'})}>
+          <div className="w-9 h-9 rounded-sm flex items-center justify-center" style={{backgroundColor:'#E0C9B8'}}>
+            <span className="font-black text-sm text-[#1A1A1A]">КС</span>
           </div>
+          <div>
+            <span className="font-black text-white text-lg tracking-wide uppercase" style={{fontFamily:'Montserrat,sans-serif'}}>
+              Кухни Сибири
+            </span>
+            <p className="text-[10px] text-[#B0B0B0] tracking-wider uppercase">Иркутск • Производство</p>
+          </div>
+        </a>
 
-          {/* Мобильное меню - кнопка */}
-          <button
-            className="lg:hidden text-white p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Мобильное меню */}
-      <div
-        className={`lg:hidden fixed inset-0 top-[60px] bg-[#050D1A]/98 backdrop-blur-lg transition-all duration-300 ${
-          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
-      >
-        <nav className="flex flex-col items-center justify-center h-full gap-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => scrollToSection(link.href)}
-              className="text-2xl font-serif text-white hover:text-emerald-400 transition-colors"
-            >
-              {link.label}
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-7">
+          {navLinks.map(l => (
+            <button key={l.href} onClick={() => scrollTo(l.href)}
+              className="text-sm font-medium text-[#B0B0B0] hover:text-[#E0C9B8] transition-colors tracking-wide">
+              {l.label}
             </button>
           ))}
-          <a
-            href={`tel:${config.phone}`}
-            className="flex items-center gap-2 text-emerald-400 text-xl mt-4"
-          >
-            <Phone className="w-5 h-5" />
-            <span>{config.phoneFormatted}</span>
+        </nav>
+
+        {/* Right actions */}
+        <div className="hidden lg:flex items-center gap-4">
+          <a href="tel:89041230123" className="flex items-center gap-2 text-white hover:text-[#E0C9B8] transition-colors text-sm font-medium">
+            <Phone className="w-4 h-4" />
+            8 (904) 123-01-23
           </a>
-          <button
-            onClick={() => scrollToSection('#contacts')}
-            className="btn-gold mt-4"
-          >
-            Вызвать замерщика
+          <a href="https://wa.me/79041230123" target="_blank" rel="noreferrer"
+            className="flex items-center gap-2 text-[#25D366] hover:opacity-80 transition-opacity">
+            <MessageCircle className="w-4 h-4" />
+          </a>
+          <button onClick={() => scrollTo('#consultation')} className="btn-accent text-sm px-5 py-2.5">
+            Оставить заявку
+          </button>
+        </div>
+
+        {/* Mobile toggle */}
+        <button className="lg:hidden text-white p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      <div className={`lg:hidden fixed inset-0 top-[60px] transition-all duration-300 ${
+        isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+      }`} style={{background:'rgba(26,26,26,0.98)', backdropFilter:'blur(12px)'}}>
+        <nav className="flex flex-col items-center justify-center h-full gap-8 px-8">
+          {navLinks.map(l => (
+            <button key={l.href} onClick={() => scrollTo(l.href)}
+              className="text-2xl font-bold uppercase tracking-wider text-white hover:text-[#E0C9B8] transition-colors">
+              {l.label}
+            </button>
+          ))}
+          <a href="tel:89041230123" className="flex items-center gap-2 text-[#E0C9B8] text-xl mt-4">
+            <Phone className="w-5 h-5" /> 8 (904) 123-01-23
+          </a>
+          <button onClick={() => scrollTo('#consultation')} className="btn-accent mt-2">
+            Оставить заявку
           </button>
         </nav>
       </div>

@@ -2,107 +2,62 @@ import { useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Hero } from '@/sections/Hero';
-import { Categories } from '@/sections/Categories';
+import { QualityReliability } from '@/sections/QualityReliability';
 import { Portfolio } from '@/sections/Portfolio';
+import { CatalogDownload } from '@/sections/CatalogDownload';
+import { Calculator } from '@/sections/Calculator';
+import { Advantages } from '@/sections/Advantages';
+import { MaterialsTabs } from '@/sections/MaterialsTabs';
 import { Process } from '@/sections/Process';
 import { Testimonials } from '@/sections/Testimonials';
-import { About } from '@/sections/About';
 import { FAQ } from '@/sections/FAQ';
-import { Contacts } from '@/sections/Contacts';
-import { getConfig } from '@/config';
+import { Consultation } from '@/sections/Consultation';
+import { Crosssell } from '@/sections/Crosssell';
 import './App.css';
 
 function App() {
-  // SEO оптимизация
   useEffect(() => {
-    const config = getConfig();
-    
-    // Установка title
-    document.title = config.seo.title;
-    
-    // Установка meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute('content', config.seo.description);
-    
-    // Установка meta keywords
-    let metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (!metaKeywords) {
-      metaKeywords = document.createElement('meta');
-      metaKeywords.setAttribute('name', 'keywords');
-      document.head.appendChild(metaKeywords);
-    }
-    metaKeywords.setAttribute('content', config.seo.keywords.join(', '));
-    
-    // Open Graph meta tags
-    const ogTags = [
-      { property: 'og:title', content: config.seo.title },
-      { property: 'og:description', content: config.seo.description },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:locale', content: 'ru_RU' },
-      { property: 'og:image', content: config.seo.ogImage },
-    ];
-    
-    ogTags.forEach(({ property, content }) => {
-      let meta = document.querySelector(`meta[property="${property}"]`);
-      if (!meta) {
-        meta = document.createElement('meta');
-        meta.setAttribute('property', property);
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute('content', content);
-    });
-    
-    // Schema.org микроразметка для локального бизнеса
-    const schemaScript = document.createElement('script');
-    schemaScript.type = 'application/ld+json';
-    schemaScript.text = JSON.stringify({
+    document.title = 'Кухни на заказ в Иркутске | Кухни Сибири — производство мебели';
+
+    // Schema.org
+    const schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    schema.text = JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
-      name: config.siteName,
-      description: config.siteDescription,
+      name: 'Кухни Сибири',
+      description: 'Производство кухонь на заказ в Иркутске. Бесплатный замер и 3D-проект.',
       url: window.location.origin,
-      telephone: config.phone,
-      email: config.email,
+      telephone: '+79041230123',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: config.city,
-        addressRegion: config.region,
-        streetAddress: config.address,
+        addressLocality: 'Иркутск',
+        addressRegion: 'Иркутская область',
         addressCountry: 'RU',
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: config.contacts.mapCoordinates.lat,
-        longitude: config.contacts.mapCoordinates.lng,
       },
       openingHours: 'Mo-Fr 09:00-19:00, Sa 10:00-16:00',
       priceRange: '$$$$',
-      image: config.seo.ogImage,
     });
-    document.head.appendChild(schemaScript);
-    
-    return () => {
-      document.head.removeChild(schemaScript);
-    };
+    document.head.appendChild(schema);
+    return () => { document.head.removeChild(schema); };
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#050D1A]">
+    <div style={{backgroundColor:'#1A1A1A', minHeight:'100vh'}}>
       <Header />
       <main>
         <Hero />
-        <Categories />
+        <QualityReliability />
         <Portfolio />
+        <CatalogDownload />
+        <Calculator />
+        <Advantages />
+        <MaterialsTabs />
         <Process />
         <Testimonials />
-        <About />
         <FAQ />
-        <Contacts />
+        <Consultation />
+        <Crosssell />
       </main>
       <Footer />
     </div>

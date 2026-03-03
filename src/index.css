@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,35 +6,37 @@
 
 @layer base {
   :root {
-    /* Синяя тема — Navy Blue + Orange Gold */
-    --background: 222 47% 5%;
-    --foreground: 210 40% 98%;
-    --card: 220 42% 8%;
-    --card-foreground: 210 40% 98%;
-    --popover: 220 42% 8%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 25 90% 53%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 42% 12%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 220 42% 15%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 25 90% 53%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
+    /* Dark charcoal + warm beige design system */
+    --background: 0 0% 10%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 14%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 14%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 29 38% 80%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 69%;
+    --accent: 29 38% 80%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 72% 63%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 30% 20%;
-    --input: 220 42% 12%;
-    --ring: 25 90% 53%;
-    --radius: 0.5rem;
+    --border: 0 0% 20%;
+    --input: 0 0% 14%;
+    --ring: 29 38% 80%;
+    --radius: 0.75rem;
 
-    /* Кастомные цвета */
-    --orange: 25 90% 53%;
-    --orange-light: 25 90% 65%;
-    --orange-dark: 25 90% 40%;
-    --navy: 222 47% 5%;
-    --navy-light: 220 42% 10%;
-    --navy-lighter: 220 42% 15%;
+    /* Custom design tokens */
+    --site-bg: #1A1A1A;
+    --site-card: #242424;
+    --site-accent: #E0C9B8;
+    --site-accent-hover: #D4AF37;
+    --site-text: #FFFFFF;
+    --site-text-muted: #B0B0B0;
+    --site-border: #333333;
+    --site-error: #FF4D4F;
   }
 }
 
@@ -48,175 +50,130 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    background-color: #1A1A1A;
+    color: #FFFFFF;
     font-family: 'Manrope', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
   }
 }
 
 @layer components {
-  /* Оранжевый градиент для текста */
-  .text-gold-gradient {
-    background: linear-gradient(135deg, #EA580C 0%, #FB923C 50%, #EA580C 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Beige accent button */
+  .btn-accent {
+    @apply px-8 py-4 font-semibold rounded-sm transition-all duration-300 inline-block text-center cursor-pointer;
+    background-color: #E0C9B8;
+    color: #1A1A1A;
+    letter-spacing: 0.05em;
+  }
+  .btn-accent:hover {
+    background-color: #D4AF37;
+    box-shadow: 0 4px 24px rgba(212, 175, 55, 0.35);
+    transform: translateY(-1px);
   }
 
-  /* Оранжевая рамка */
-  .border-gold {
-    border-color: hsl(25 90% 53%);
+  /* Outline button */
+  .btn-outline {
+    @apply px-8 py-4 font-semibold rounded-sm transition-all duration-300 inline-block text-center cursor-pointer;
+    border: 1px solid #E0C9B8;
+    color: #E0C9B8;
+    background: transparent;
+  }
+  .btn-outline:hover {
+    background-color: #E0C9B8;
+    color: #1A1A1A;
   }
 
-  /* Оранжевая кнопка */
-  .btn-gold {
-    @apply px-8 py-4 bg-gradient-to-r from-orange-600 via-orange-500 to-orange-600 text-white font-semibold rounded-sm;
-    background-size: 200% 100%;
+  /* Card style */
+  .card-dark {
+    background-color: #242424;
+    border: 1px solid #333333;
+    border-radius: 12px;
     transition: all 0.3s ease;
   }
-
-  .btn-gold:hover {
-    background-position: 100% 0;
-    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+  .card-dark:hover {
+    border-color: #E0C9B8;
+    box-shadow: 0 8px 32px rgba(224, 201, 184, 0.1);
+    transform: translateY(-4px);
   }
 
-  /* Стеклянный эффект — тёмно-синий оттенок */
-  .glass {
-    background: rgba(11, 22, 41, 0.75);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(16, 185, 129, 0.15);
+  /* Section header */
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.2em] uppercase mb-3;
+    color: #B0B0B0;
+  }
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-black uppercase;
+    color: #FFFFFF;
+    letter-spacing: 0.02em;
+  }
+  .section-title span {
+    color: #E0C9B8;
   }
 
-  /* Секция с зелёным акцентом */
-  .section-accent {
-    position: relative;
+  /* Input style */
+  .input-dark {
+    @apply w-full px-4 py-3 text-white rounded-sm transition-all duration-200;
+    background-color: #333333;
+    border: 1px solid #444444;
+    outline: none;
+  }
+  .input-dark::placeholder {
+    color: #777;
+  }
+  .input-dark:focus {
+    border-color: #E0C9B8;
+    box-shadow: 0 0 0 2px rgba(224, 201, 184, 0.15);
   }
 
-  .section-accent::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #10B981, transparent);
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #333333, transparent);
   }
 
-  /* Анимация появления */
-  .fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+  /* Icon circle */
+  .icon-circle {
+    @apply w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0;
+    background-color: rgba(224, 201, 184, 0.12);
+    border: 1px solid rgba(224, 201, 184, 0.2);
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Process step */
+  .process-step {
+    @apply flex gap-5 items-start;
+  }
+  .process-num {
+    @apply w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0;
+    background-color: #E0C9B8;
+    color: #1A1A1A;
   }
 
-  /* Оранжевое свечение */
-  .glow-gold {
-    box-shadow: 0 0 30px rgba(249, 115, 22, 0.3);
-  }
-
-  /* Карточка товара */
-  .product-card {
-    @apply relative overflow-hidden rounded-lg;
-    transition: all 0.4s ease;
-  }
-
-  .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  }
-
-  .product-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
+  /* Tab active */
+  .tab-btn {
+    @apply px-6 py-3 text-sm font-semibold rounded-sm transition-all duration-200 cursor-pointer;
+    color: #B0B0B0;
     border: 1px solid transparent;
-    border-radius: inherit;
-    transition: border-color 0.3s ease;
   }
-
-  .product-card:hover::after {
-    border-color: hsl(25 90% 53%);
+  .tab-btn.active {
+    background-color: #E0C9B8;
+    color: #1A1A1A;
   }
-
-  /* Иконка с изумрудным фоном */
-  .icon-gold {
-    @apply w-14 h-14 rounded-full flex items-center justify-center;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.1));
-    border: 1px solid rgba(16, 185, 129, 0.3);
-  }
-
-  /* Навигация */
-  .nav-link {
-    @apply relative text-white/80 hover:text-white transition-colors;
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: #10B981;
-    transition: width 0.3s ease;
-  }
-
-  .nav-link:hover::after {
-    width: 100%;
-  }
-
-  /* Форма ввода */
-  .input-gold {
-    @apply bg-white/5 border border-white/20 rounded px-4 py-3 text-white placeholder:text-white/50;
-    transition: all 0.3s ease;
-  }
-
-  .input-gold:focus {
-    @apply outline-none border-blue-500;
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
-  }
-
-  /* Линия-разделитель */
-  .divider-gold {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+  .tab-btn:not(.active):hover {
+    border-color: #E0C9B8;
+    color: #E0C9B8;
   }
 }
 
-/* Скроллбар */
-::-webkit-scrollbar {
-  width: 8px;
-}
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1A1A1A; }
+::-webkit-scrollbar-thumb { background: #333333; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #E0C9B8; }
 
-::-webkit-scrollbar-track {
-  background: hsl(222 47% 5%);
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(220 50% 22%);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(160 84% 39%);
-}
-
-/* Селекция текста */
-::selection {
-  background: rgba(59, 130, 246, 0.3);
-  color: white;
-}
+/* Selection */
+::selection { background: rgba(224, 201, 184, 0.3); color: #fff; }
